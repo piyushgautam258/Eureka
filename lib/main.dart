@@ -1,4 +1,6 @@
 import 'package:eureka_poc/screen/ticketScreen.dart';
+import 'package:eureka_poc/screen/ticketinvoiceScreen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +17,10 @@ class MyApp extends StatelessWidget {
       // title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+                fontFamily: 'Poppins',
+
       ),
-      home: const TiketScreen(),
+      home: const ticketinvoiceScreen(),
     );
   }
 }
