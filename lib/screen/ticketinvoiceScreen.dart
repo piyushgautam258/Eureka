@@ -21,13 +21,11 @@ class ticketinvoiceScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-                   Text(
-            'Payment Method',
-            style: TextStyle(
-                fontSize: 14,
-                color: Color.fromARGB(62, 64, 69, 1)),
-          ),
+                  Text(
+                    'Payment Method',
+                    style: TextStyle(
+                        fontSize: 14, color: Color.fromARGB(62, 64, 69, 1)),
+                  ),
                 ]),
           )
         ],
