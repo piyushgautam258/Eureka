@@ -34,6 +34,97 @@ class ticketinvoiceScreen extends StatelessWidget {
   }
 }
 
+<<<<<<< Updated upstream
+=======
+class Qrcode extends StatelessWidget {
+  const Qrcode({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 550,
+      width: 400,
+      padding: EdgeInsets.all(29),
+      color: Color.fromRGBO(242, 244, 250, 1),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Payment Method',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(230, 0, 0, 0)),
+                ),
+                Text(
+                  'UPI',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(230, 0, 0, 0)),
+                ),
+              ],
+            ),
+            SizedBox(height: 25),
+            Text(
+              'Customer can scan the below QR code for making payment through GPay, PhonePe or any other UPI payment App.',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(230, 0, 0, 0)),
+            ),
+            SizedBox(height: 55),
+            Center(
+              child: Container(
+                height: 220,
+                width: 220,
+                child: Image.asset('../images/qrcode.png'),
+              ),
+            ),
+                        SizedBox(height: 55),
+
+            Center(
+              child: GestureDetector(
+                onTap:(){
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context)=>buildSheet(),
+                    );
+
+                },
+                child: Container(
+                  width: 181,
+                  height: 41,
+                        padding: EdgeInsets.all(12),
+                          
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Text("Other Payment Options"),
+                ),
+              ),
+            ),
+          ]),
+    );
+  }
+}
+
+
+
+
+
+>>>>>>> Stashed changes
 class Invoice_card extends StatelessWidget {
   const Invoice_card({
     super.key,
@@ -79,5 +170,15 @@ class Invoice_card extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+
+class buildSheet extends StatelessWidget {
+  const buildSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("hello");
   }
 }
