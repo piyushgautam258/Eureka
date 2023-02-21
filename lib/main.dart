@@ -21,7 +21,11 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Poppins',
 
       ),
+<<<<<<< Updated upstream
       home: const LandingScreen(),
+=======
+      home: const ticketinvoiceScreen(),
+>>>>>>> Stashed changes
     );
   }
 }

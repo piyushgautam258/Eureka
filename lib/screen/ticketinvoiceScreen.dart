@@ -141,3 +141,25 @@ class Invoice_card extends StatelessWidget {
     );
   }
 }
+<<<<<<< Updated upstream
+=======
+
+
+class buildSheet extends StatelessWidget {
+  const buildSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: 40,),
+        Text(
+            'Payment Options',
+            style: TextStyle(
+                fontSize: 20,fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 0, 0)),
+          ),
+      ],
+    );
+  }
+}
+>>>>>>> Stashed changes
