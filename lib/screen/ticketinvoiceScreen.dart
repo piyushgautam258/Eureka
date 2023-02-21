@@ -12,30 +12,13 @@ class ticketinvoiceScreen extends StatelessWidget {
       body: Column(
         children: [
           Invoice_card(),
-          Container(
-            height: 550,
-            width: 400,
-            padding: EdgeInsets.all(29),
-            color: Color.fromRGBO(242, 244, 250, 1),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Payment Method',
-                    style: TextStyle(
-                        fontSize: 14, color: Color.fromARGB(62, 64, 69, 1)),
-                  ),
-                ]),
-          )
+          Qrcode(),
         ],
       ),
     );
   }
 }
 
-<<<<<<< Updated upstream
-=======
 class Qrcode extends StatelessWidget {
   const Qrcode({
     super.key,
@@ -124,7 +107,6 @@ class Qrcode extends StatelessWidget {
 
 
 
->>>>>>> Stashed changes
 class Invoice_card extends StatelessWidget {
   const Invoice_card({
     super.key,

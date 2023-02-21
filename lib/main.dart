@@ -19,11 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Poppins',
       ),
-<<<<<<< Updated upstream
       home: const TicketScreen(),
-=======
-      home: const ticketinvoiceScreen(),
->>>>>>> Stashed changes
     );
   }
 }
