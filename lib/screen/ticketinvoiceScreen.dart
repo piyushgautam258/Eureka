@@ -76,23 +76,36 @@ class Qrcode extends StatelessWidget {
                         SizedBox(height: 55),
 
             Center(
-              child: Container(
-                width: 181,
-                height: 41,
-                      padding: EdgeInsets.all(12),
-            
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Text("Other Payment Options"),
+              child: GestureDetector(
+                onTap:(){
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context)=>buildSheet(),
+                    );
+
+                },
+                child: Container(
+                  width: 181,
+                  height: 41,
+                        padding: EdgeInsets.all(12),
+                          
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Text("Other Payment Options"),
+                ),
               ),
             ),
           ]),
     );
   }
 }
+
+
+
+
 
 class Invoice_card extends StatelessWidget {
   const Invoice_card({
@@ -141,8 +154,11 @@ class Invoice_card extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 15bc7fe208112c353583dd29492259387bd6c28e
 
 
 class buildSheet extends StatelessWidget {
@@ -150,6 +166,7 @@ class buildSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Column(
       children: [
         SizedBox(height: 40,),
@@ -163,3 +180,8 @@ class buildSheet extends StatelessWidget {
   }
 }
 >>>>>>> Stashed changes
+=======
+    return Text("hello");
+  }
+}
+>>>>>>> 15bc7fe208112c353583dd29492259387bd6c28e

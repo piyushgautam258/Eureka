@@ -1,4 +1,3 @@
-import 'package:eureka_poc/screen/landingScreen.dart';
 import 'package:eureka_poc/screen/ticketScreen.dart';
 import 'package:eureka_poc/screen/ticketinvoiceScreen.dart';
 
@@ -18,14 +17,17 @@ class MyApp extends StatelessWidget {
       // title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-                fontFamily: 'Poppins',
-
+        fontFamily: 'Poppins',
       ),
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       home: const LandingScreen(),
 =======
       home: const ticketinvoiceScreen(),
 >>>>>>> Stashed changes
+=======
+      home: const TicketScreen(),
+>>>>>>> 15bc7fe208112c353583dd29492259387bd6c28e
     );
   }
 }
