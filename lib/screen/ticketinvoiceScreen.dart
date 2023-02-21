@@ -76,23 +76,36 @@ class Qrcode extends StatelessWidget {
                         SizedBox(height: 55),
 
             Center(
-              child: Container(
-                width: 181,
-                height: 41,
-                      padding: EdgeInsets.all(12),
-            
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Text("Other Payment Options"),
+              child: GestureDetector(
+                onTap:(){
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context)=>buildSheet(),
+                    );
+
+                },
+                child: Container(
+                  width: 181,
+                  height: 41,
+                        padding: EdgeInsets.all(12),
+                          
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Text("Other Payment Options"),
+                ),
               ),
             ),
           ]),
     );
   }
 }
+
+
+
+
 
 class Invoice_card extends StatelessWidget {
   const Invoice_card({
@@ -139,5 +152,15 @@ class Invoice_card extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+
+class buildSheet extends StatelessWidget {
+  const buildSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("hello");
   }
 }
