@@ -14,22 +14,23 @@ class TaskScreen extends StatelessWidget {
         ),
         child: BottomNavigationBar(
       
-          selectedItemColor: Colors.red,
+          selectedItemColor: Color.fromARGB(224, 255, 255, 255),
           unselectedItemColor: Colors.grey,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.note_add), label: "About", ),
+            BottomNavigationBarItem(icon: Icon(Icons.note_add), label: "My Task", ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_bag), label: "Product"),
+                icon: Icon(Icons.shopping_bag), label: "Stock"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: "Contact"),
+                icon: Icon(Icons.search), label: "Search"),
            
           ],
         ),
       ),
 
       backgroundColor: Color.fromRGBO(242, 244, 250, 1),
+      
       body: Column(
         children: [
           Row(
@@ -84,7 +85,8 @@ class TaskScreen extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  task_Card()
+                  task_Card(),
+
                 ],
               ),
             ),
@@ -594,5 +596,46 @@ class WeekSheet extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+
+class SnackBarPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: Text(
+          'Click to See SnackBar',
+          style: TextStyle(fontSize: 30.0),
+        ),
+       
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: Column(
+              children: [
+                ElevatedButton(onPressed: (){
+                  Navigator.of(context).pop();
+
+                }, child: Text("close")),
+                SizedBox(height: 50,),
+                Text(
+                      'Youre missing some of the recommended tools for these tasks. ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(230, 235, 235, 235)),
+                    ),
+                    
+              ],
+            ),
+            duration: Duration(seconds: 50),
+           
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+      ),
+    );
   }
 }
