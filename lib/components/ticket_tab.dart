@@ -19,16 +19,12 @@ class _TicketTabState extends State<TicketTab> {
   @override
   Widget build(BuildContext context) {
     return
-        // Container(
-        //   width: 400,
-        //   height: 133,
-        // child:
+     
         MaterialApp(
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            // toolbarHeight: 2,
 
             title: Center(
               child: Container(
@@ -45,7 +41,6 @@ class _TicketTabState extends State<TicketTab> {
                     Container(
                       width: 80,
                       height: 33,
-                      // color: Colors.black,
                       decoration: new BoxDecoration(
                         borderRadius: new BorderRadius.circular(16.0),
                         color: Colors.black,
@@ -73,7 +68,6 @@ class _TicketTabState extends State<TicketTab> {
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
 
-                // fontFamily: 'Family Name',
               ),
               tabs: [
                 Container(
