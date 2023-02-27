@@ -1,4 +1,9 @@
 import 'package:eureka_poc/components/ticketGeneralInfo.dart';
+import 'package:eureka_poc/components/ticket_amc_details.dart';
+// import 'package:eureka_poc/components/ticket_amc1.dart';
+// import 'package:eureka_poc/components/ticket_amc_dummy.dart';
+import 'package:eureka_poc/components/ticket_tab.dart';
+import 'package:eureka_poc/components/ticket_spares.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
@@ -97,8 +102,8 @@ class _TicketTabState extends State<TicketTab> {
           body: const TabBarView(
             children: [
               Center(child: TicketGeneralInfo()),
-              Center(child: Text('Spares')),
-              Center(child: Text('AMC')),
+              Center(child: TicketSpares()),
+              Center(child: Ticket_AMC()),
             ],
           ),
         ),

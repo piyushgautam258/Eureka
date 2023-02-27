@@ -11,92 +11,48 @@ class _TicketBottomBarState extends State<TicketBottomBar> {
   int _selectedIndex = 0;
   final ScrollController _homeController = ScrollController();
 
-  Widget _listViewBody() {
-    return ListView.separated(
-        controller: _homeController,
-        itemBuilder: (BuildContext context, int index) {
-          return Center(
-            child: Text(
-              'Item $index',
-            ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) => const Divider(
-              thickness: 1,
-            ),
-        itemCount: 50);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: BottomNavigationBar(
-        showSelectedLabels: false, // <-- HERE
-        showUnselectedLabels: false,
-        backgroundColor: Color.fromARGB(255, 12, 163, 50),
-        iconSize: 20,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            label: '',
-            icon: Text(
-              "Reshedule",
-              style: TextStyle(
-                color: Color.fromRGBO(247, 247, 249, 1),
-                fontSize: 19,
+      height: 56,
+      width: 390,
+      // color: Colors.amber,
+      child: Row(
+        children: [
+          InkWell(
+            onTap: () {},
+            child: Container(
+              height: 68,
+              width: 195,
+              color: Colors.black,
+              child: Center(
+                child: Text(
+                  'Reschedule',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ),
-          BottomNavigationBarItem(
-            icon: Text(
-              'Mark as Complete',
-              style: TextStyle(
-                color: Color.fromRGBO(247, 247, 249, 1),
-                fontSize: 19,
+          InkWell(
+            onTap: () {},
+            child: Container(
+              height: 80,
+              width: 197,
+              color: Color.fromARGB(255, 59, 202, 88),
+              child: Center(
+                child: Text(
+                  'Mark as Complete',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
-            label: '',
           ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (int index) {
-          switch (index) {
-            case 0:
-              // only scroll to top when current index is selected.
-              if (_selectedIndex == index) {
-                _homeController.animateTo(
-                  0.0,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeOut,
-                );
-              }
-              break;
-            case 1:
-              showModal(context);
-              break;
-          }
-          setState(
-            () {
-              _selectedIndex = index;
-            },
-          );
-        },
-      ),
-    );
-    // );
-  }
-
-  void showModal(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        content: const Text('Example Dialog'),
-        actions: <TextButton>[
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Close'),
-          )
         ],
       ),
     );
