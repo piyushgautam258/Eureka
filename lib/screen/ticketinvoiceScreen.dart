@@ -78,7 +78,7 @@ class Qrcode extends StatelessWidget {
               child: Container(
                 width: 181,
                 height: 41,
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
                     border: Border.all(
                       color: Color.fromARGB(255, 0, 0, 0),
@@ -94,7 +94,7 @@ class Qrcode extends StatelessWidget {
                           context: context,
                           builder: (context) => buildSheet());
                     },
-                    child: Text("Other Payment Options")),
+                    child: Center(child: Text("Other Payment Options"))),
               ),
             ),
           ]),
@@ -158,7 +158,10 @@ class buildSheet extends StatelessWidget {
     return Container(
       width: 360,
       height: 639,
+
       decoration: new BoxDecoration(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+
       borderRadius: new BorderRadius.only(
             topLeft: const Radius.circular(25.0),
             topRight: const Radius.circular(25.0))),
