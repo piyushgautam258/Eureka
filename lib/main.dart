@@ -1,3 +1,4 @@
+import 'package:eureka_poc/screen/ticketChargesScreen.dart';
 import 'package:eureka_poc/screen/ticketScreen.dart';
 import 'package:eureka_poc/screen/ticketinvoiceScreen.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       home: const TicketScreen(),
+      // home: const TicketChargesScreen(),
     );
   }
 }

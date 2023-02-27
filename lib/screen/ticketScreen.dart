@@ -25,7 +25,7 @@ class _TicketScreenState extends State<TicketScreen> {
           // width: 400,
           child: const TicketTab(),
         ),
-        bottomNavigationBar: TicketBottomBar(),
+        // bottomNavigationBar: TicketBottomBar(),
       ),
     );
   }
