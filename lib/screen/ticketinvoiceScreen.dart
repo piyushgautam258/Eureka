@@ -73,39 +73,34 @@ class Qrcode extends StatelessWidget {
                 child: Image.asset('../images/qrcode.png'),
               ),
             ),
-                        SizedBox(height: 55),
-
+            SizedBox(height: 55),
             Center(
-              child: GestureDetector(
-                onTap:(){
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (context)=>buildSheet(),
-                    );
-
-                },
-                child: Container(
-                  width: 181,
-                  height: 41,
-                        padding: EdgeInsets.all(12),
-                          
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: Text("Other Payment Options"),
-                ),
+              child: Container(
+                width: 181,
+                height: 41,
+                padding: EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top:Radius.circular(20))
+                          ),
+                          context: context,
+                          builder: (context) => buildSheet());
+                    },
+                    child: Center(child: Text("Other Payment Options"))),
               ),
             ),
           ]),
     );
   }
 }
-
-
-
-
 
 class Invoice_card extends StatelessWidget {
   const Invoice_card({
@@ -155,12 +150,168 @@ class Invoice_card extends StatelessWidget {
   }
 }
 
-
 class buildSheet extends StatelessWidget {
   const buildSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text("hello");
+    return Container(
+      width: 360,
+      height: 639,
+
+      decoration: new BoxDecoration(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+
+      borderRadius: new BorderRadius.only(
+            topLeft: const Radius.circular(25.0),
+            topRight: const Radius.circular(25.0))),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 40,
+          ),
+          Text(
+            'Payment Options',
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 0, 0, 0)),
+          ),
+          Container(
+              height: 190,
+              width: 320,
+              padding: EdgeInsets.all(29),
+              color: Color.fromRGBO(0, 242, 244, 250),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Cash',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      Image.asset('../assets/images/cashicon.png'),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 17,
+                  ),
+                  Text(
+                    'I’ve collected ₹1200.00 from “Client name”',
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 0, 0, 0)),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 68,
+                        height: 22,
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.circular(16.0),
+                          color: Colors.black,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Confirm',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              )),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+              height: 320,
+              width: 320,
+              padding: EdgeInsets.all(29),
+              color: Color.fromRGBO(0, 242, 244, 250),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Debit/Credit card',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      Image.asset('../assets/images/cardicon.png'),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 17,
+                  ),
+                  Text(
+                    'Send payment link to customer”',
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Color.fromARGB(255, 0, 0, 0)),
+                  ),
+                  SizedBox(height: 10,),
+                  Container(
+                    width: 296,
+                    height: 120,
+                    decoration: BoxDecoration(
+                                                borderRadius: new BorderRadius.circular(5.0),
+
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    width: 0.5,
+                  )),
+
+                    child: Center(child: 
+                    Text("Hello Customer name, Your Bill amount is ₹1200.00 on DD/MM/YYYY. Click link to download the invoice and kindly do the payment.",style: TextStyle(fontSize: 13.4),)
+                    
+                    ),
+                  ),
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 68,
+                        height: 22,
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.circular(16.0),
+                          color: Colors.black,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Send',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              )
+              
+              
+              ),
+        ],
+      ),
+    );
   }
 }
